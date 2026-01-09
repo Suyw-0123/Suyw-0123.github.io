@@ -11,6 +11,10 @@ tags: ["Graph RAG", "Go", "React", "Kubernetes", "Neo4j"]
 
 **GraphWeaver** is a cloud-native, high-performance **Graph RAG (Retrieval-Augmented Generation)** knowledge engine. It is designed to solve complex multi-hop reasoning challenges that traditional RAG systems struggle with by leveraging deep **Knowledge Graph** structures and entity-relationship modeling.
 
+#### DEMO
+
+![demo](/pictures/graph-weaver-demo.gif)
+
 ## Key Features
 
 - **Knowledge Graph Retrieval**: Utilizes Graph Diffusion and relationship paths to perform logical reasoning across interconnected data points.
@@ -40,10 +44,6 @@ tags: ["Graph RAG", "Go", "React", "Kubernetes", "Neo4j"]
 - **Containerization**: Docker & Docker Compose
 - **Orchestration**: Kubernetes (K8s)
 - **CI/CD**: GitHub Actions
-
-## DEMO
-
-![demo](/pictures/graph-weaver-demo.gif)
 
 ## Development Status
 This project is currently under active development, focusing on optimizing graph data fetching and enhancing the chat service implementation.

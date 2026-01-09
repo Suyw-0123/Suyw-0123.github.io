@@ -1,0 +1,17 @@
+title: Suyw-0123's Dev Space
+description: Personal GitHub Page for showcasing projects and development logs.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://Suyw-0123.github.io" # the base hostname & protocol for your site
+markdown: kramdown
+theme: null # We are creating a custom layout
+
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
+
+exclude:
+  - openspec/
+  - AGENTS.md
+  - README.md
+  - .gitignore

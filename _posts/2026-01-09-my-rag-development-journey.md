@@ -1,6 +1,6 @@
 ---
 layout: page
-title: My RAG Development Journey: From Exploration to Graph RAG
+title: "My RAG Development Journey: From Exploration to Graph RAG"
 date: 2026-01-09
 tags: ["RAG", "Graph RAG", "Golang", "Kubernetes", "DevLog"]
 ---

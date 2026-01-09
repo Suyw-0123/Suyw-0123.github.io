@@ -43,7 +43,7 @@ tags: ["Graph RAG", "Go", "React", "Kubernetes", "Neo4j"]
 
 ## DEMO
 
-![demo](../pictures/graph-weaver-demo.gif)
+![demo](/pictures/graph-weaver-demo.gif)
 
 ## Development Status
 This project is currently under active development, focusing on optimizing graph data fetching and enhancing the chat service implementation.

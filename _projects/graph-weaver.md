@@ -9,19 +9,23 @@ tags: ["Graph RAG", "Go", "React", "Kubernetes", "Neo4j"]
 
 ## Project Overview
 
-**GraphWeaver** is a cloud-native, high-performance **Graph RAG (Retrieval-Augmented Generation)** knowledge engine. It is designed to solve complex multi-hop reasoning challenges that traditional RAG systems struggle with by leveraging deep **Knowledge Graph** structures and entity-relationship modeling.
+**GraphWeaver** is a high-performance **Graph RAG (Retrieval-Augmented Generation)** knowledge engine. It leverages the power of "Entity-Relationship" modeling and "Semantic Vector" search to solve complex multi-hop reasoning challenges that traditional RAG systems often struggle with.
 
-#### DEMO
+### DEMO
 
 ![demo](/pictures/graph-weaver-demo.gif)
 
 ## Key Features
 
-- **Knowledge Graph Retrieval**: Utilizes Graph Diffusion and relationship paths to perform logical reasoning across interconnected data points.
-- **Cloud-Native Architecture**: Built as a microservice-based system, ready for Kubernetes (Kind/Helm) deployment.
+- **Hybrid Retrieval Engine**: Combines **Vector Search** (for semantic entry points) with **Graph Diffusion** (for logical relationship reasoning).
+- **Containerized Deployment**: Easy setup with **Docker Compose** for local development and testing.
 - **High Performance**: Backend implemented in **Go (Golang)** for efficient concurrency and low-latency processing.
-- **Automated Entity Extraction**: Automatically identifies and maps entities and relationships from unstructured data (PDF/Markdown).
-- **Interactive Dashboard**: A modern, responsive UI built with **React**, **TypeScript**, and **Tailwind CSS**.
+- **Modern Knowledge Management**: Automated entity and relationship extraction from unstructured data (PDF/Markdown).
+- **Interactive UI**: Sleek and responsive dashboard built with **React**, **TypeScript**, and **Tailwind CSS**.
+
+## System Architecture
+
+![diagram](/pictures/graphweaver_architecture.png)
 
 ## Technology Stack
 
@@ -46,4 +50,4 @@ tags: ["Graph RAG", "Go", "React", "Kubernetes", "Neo4j"]
 - **CI/CD**: GitHub Actions
 
 ## Development Status
-This project is currently under active development, focusing on optimizing graph data fetching and enhancing the chat service implementation.
+This project is currently under active development, Currently, we're deploying using Docker Compose; the Kubernetes solution might require more time for me to research, now focusing on optimizing graph data fetching and enhancing the chat service implementation.

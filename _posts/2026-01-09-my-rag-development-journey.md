@@ -2,7 +2,7 @@
 layout: page
 title: "My RAG Development Journey: From Exploration to Graph RAG"
 date: 2026-01-09
-tags: ["RAG", "Graph RAG", "Golang", "Kubernetes", "DevLog"]
+tags: ["RAG", "Graph RAG", "Web dev", "Docker", "DevLog"]
 ---
 
 This is a journey of how I evolved from an LLM (Large Language Model) enthusiast to a RAG system developer. From understanding the core principles to implementing cloud-native microservices, every step represents my growth and thinking in technology.
@@ -28,7 +28,7 @@ While exploring the open-source community, I identified a major pain point in tr
 Consequently, I launched a new project: **[GraphWeaver](https://github.com/Suyw-0123/GraphWeaver)**.
 This project is a culmination of my recent learning:
 *   **High-Performance Backend**: Re-architected using **Golang (Gin)**.
-*   **Cloud-Native Practice**: Integrated with **Kubernetes (K8s)** for microservice management.
+*   **Cloud-Native Practice**: Integrated with **Kubernetes (K8s)** for microservice management. (planning, not yet completed, currently running with Docker Compose)
 *   **Automation**: Explored **GitHub Actions** for CI/CD pipelines.
 
 ## 5. Future: Continuous Growth in the Open Source Community

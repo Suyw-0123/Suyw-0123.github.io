@@ -2,7 +2,7 @@
 layout: page
 title: GraphWeaver
 description: Graph RAG knowledge engine.
-tags: ["Graph RAG", "Go", "React", "Kubernetes", "Neo4j"]
+tags: ["Graph RAG", "Go", "React", "Docker", "GitHub Action"]
 ---
 
 ### [GitHub Repository](https://github.com/Suyw-0123/GraphWeaver)
@@ -42,11 +42,12 @@ tags: ["Graph RAG", "Go", "React", "Kubernetes", "Neo4j"]
 ### Frontend & Styling 
 - **Framework**: React.js with TypeScript
 - **Styling**: Tailwind CSS
+
 > The front-end was primarily completed with the assistance of Vibe coding.
 
 ### Infrastructure & DevOps
 - **Containerization**: Docker & Docker Compose
-- **Orchestration**: Kubernetes (K8s)
+- **Orchestration**: Kubernetes (K8s) (planning)
 - **CI/CD**: GitHub Actions
 
 ## Development Status

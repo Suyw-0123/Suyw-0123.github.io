@@ -8,7 +8,7 @@ title: Home
         Hello, I'm Suyw
     </h1>
     <p class="text-xl text-slate-400 max-w-2xl leading-relaxed">
-        Personal workspace for showcasing my projects and documenting my development journey.
+        Personal workspace for showcasing my projects and documenting my daily notes.
     </p>
 </section>
 
@@ -18,7 +18,7 @@ title: Home
         <p class="text-slate-300 leading-relaxed mb-6">
             Hi, I'm Suyw a builder of tools and open source explorer.  
             This space shares my projects and documents my learning journey.  
-            Currently learning these tech stacks with basic proficiency, stronger than other areas.
+            Currently learning these tech stacks with basic proficiency, stronger than other stacks.
         </p>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div>
@@ -39,14 +39,13 @@ title: Home
                 </ul>
             </div>
             <div>
-                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Tech Stack used</h3>
+                <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Tech Stacks</h3>
                 <div class="flex flex-wrap gap-2">
                     <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">Python</span>
                     <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">Docker</span>
                     <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">Git flow</span>
-                    <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">RAG pipeline</span>
+                    <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">RAG System</span>
                     <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">SQLite</span>
-                    <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">MySQL</span>
                     <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">PostgreSQL (learning)</span>
                     <span class="px-3 py-1 bg-slate-900 border border-slate-700 rounded-full text-xs text-slate-300">Linux (Ubuntu)</span>
                 </div>
@@ -81,7 +80,7 @@ title: Home
 </section>
 
 <section id="logs" class="max-w-4xl mx-auto px-6 py-10">
-    <h2 class="text-2xl font-bold text-white mb-8 border-l-4 border-emerald-500 pl-4">Dev Logs</h2>
+    <h2 class="text-2xl font-bold text-white mb-8 border-l-4 border-emerald-500 pl-4">Notes</h2>
     <div class="space-y-6">
         {% for post in site.posts %}
         <a href="{{ post.url }}" class="block p-4 border border-slate-800 rounded-md hover:bg-slate-800/30 transition-colors">
@@ -100,7 +99,7 @@ title: Home
 
         {% if site.posts.size == 0 %}
         <div class="py-10 text-center text-slate-500 border border-dashed border-slate-700 rounded-lg">
-            No logs yet. Add a new file to <code class="bg-slate-900 px-1 rounded">_posts/</code>.
+            No notes yet. Add a new file to <code class="bg-slate-900 px-1 rounded">_posts/</code>.
         </div>
         {% endif %}
     </div>

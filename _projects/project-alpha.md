@@ -21,6 +21,6 @@ You can deploy a static website on GitHub Pages without renting a domain—it's 
 The tech stack I used for this webpage is the popular Tailwind CSS and Jekyll for static page generation.
 
 ### Other
-I'll be putting descriptions of some of my previous projects in the Projects section, and I might also post my development logs in the Dev log section.
+I'll be putting descriptions of some of my previous projects in the Projects section, and I might also post my daily life and development records in the Notes section.
 
-The dev log won't just contain my development notes; it might also record useful tools I discover, interesting things that happen during development, and more.
+The Notes section won't just contain my development notes; it might also record useful tools I discover, interesting things that happen in daily life, and more.

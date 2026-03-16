@@ -2,7 +2,6 @@
 layout: page
 title: "My Dev Setup"
 date: 2026-03-12
-categories: [DevSetup, Workflow]
 ---
 
 Dev Env Log

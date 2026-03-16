@@ -9,9 +9,11 @@ tags: ["Graph RAG", "Go", "React", "Docker", "GitHub Action"]
 
 ## Project Overview
 
-**GraphWeaver** is a high-performance **Graph RAG (Retrieval-Augmented Generation)** knowledge engine. It leverages the power of "Entity-Relationship" modeling and "Semantic Vector" search to solve complex multi-hop reasoning challenges that traditional RAG systems often struggle with.
+**GraphWeaver** is a **Graph RAG (Retrieval-Augmented Generation)** knowledge engine. It leverages the power of "Entity-Relationship" modeling and "Semantic Vector" search to solve complex multi-hop reasoning challenges that traditional RAG systems often struggle with.
 
 ### DEMO
+
+[Click here to try the demo](https://download-directory.github.io/?url=https://github.com/Suyw-0123/GraphWeaver/tree/main/demo)
 
 ![demo](/pictures/graph-weaver-demo.gif)
 
@@ -49,6 +51,9 @@ tags: ["Graph RAG", "Go", "React", "Docker", "GitHub Action"]
 - **Containerization**: Docker & Docker Compose
 - **Orchestration**: Kubernetes (K8s) (planning)
 - **CI/CD**: GitHub Actions
+
+## TODO
+- feature: Query rewriting
 
 ## Development Status
 This project is currently under active development, Currently, we're deploying using Docker Compose; the Kubernetes solution might require more time for me to research, now focusing on optimizing graph data fetching and enhancing the chat service implementation.

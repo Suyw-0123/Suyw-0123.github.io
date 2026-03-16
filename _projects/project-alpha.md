@@ -1,7 +1,7 @@
 ---
 layout: page
 title: GitHub Page
-description: A high-performance demonstration of my web development skills.
+description: Just a GitHub Page
 tags: ["GitHub Page","HTML", "Tailwind", "Jekyll"]
 ---
 
@@ -9,18 +9,15 @@ tags: ["GitHub Page","HTML", "Tailwind", "Jekyll"]
 
 ## Project Overview
 This is my first project introduction on this website, and that project is the current GitHub Pages itself.
-
-You can deploy a static website on GitHub Pages without renting a domain—it's completely free. It's perfect for showcasing your portfolio; you can focus solely on creating your static website.
+I can deploy a static website on GitHub Pages without renting a domain—it's completely free. It's perfect for showcasing my portfolio.
 
 ### Features
-- Responsive Design
-- Dark Mode by default
-- Fast loading times
+- Dark theme
+- IDK what feature this website has... 
 
-### Technical Stack
-The tech stack I used for this webpage is the popular Tailwind CSS and Jekyll for static page generation.
+### Tech Stack
+- Jekyll
+- Tailwind CSS
 
 ### Other
-I'll be putting descriptions of some of my previous projects in the Projects section, and I might also post my daily life and development records in the Notes section.
-
-The Notes section won't just contain my development notes; it might also record useful tools I discover, interesting things that happen in daily life, and more.
+I'll be putting descriptions of some of my projects in the Projects section, and I might also post my daily life in the Notes section.

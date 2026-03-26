@@ -3,6 +3,9 @@ description: Personal GitHub Page for showcasing projects and daily notes.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://Suyw-0123.github.io" # the base hostname & protocol for your site
 markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 theme: null # We are creating a custom layout
 
 collections:

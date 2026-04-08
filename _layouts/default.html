@@ -1,29 +1,355 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ page.title }} | {{ site.title }}</title>
-    <link rel="icon" type="image/png" href="{{ '/favicon.png' | relative_url }}">
-    <link rel="shortcut icon" href="{{ '/favicon.png' | relative_url }}">
-    <link rel="apple-touch-icon" href="{{ '/favicon.png' | relative_url }}">
+    <script>
+        (function () {
+            var storageKey = 'site-theme';
+            var theme = 'light';
+
+            try {
+                var savedTheme = localStorage.getItem(storageKey);
+                if (savedTheme === 'dark') {
+                    theme = 'dark';
+                }
+            } catch (error) {
+                theme = 'light';
+            }
+
+            document.documentElement.dataset.theme = theme;
+            document.documentElement.style.colorScheme = theme;
+            window.__siteTheme = theme;
+            window.__siteThemeStorageKey = storageKey;
+            window.__siteThemeAssets = {
+                light: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css',
+                dark: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css'
+            };
+        })();
+    </script>
     <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css">
+    <link id="hljs-theme" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css">
+    <script>
+        (function () {
+            var theme = window.__siteTheme || 'light';
+            var link = document.getElementById('hljs-theme');
+
+            if (link && window.__siteThemeAssets) {
+                link.href = window.__siteThemeAssets[theme] || window.__siteThemeAssets.light;
+            }
+        })();
+    </script>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            color-scheme: light;
+            --bg: #f8fafc;
+            --nav-bg: rgba(248, 250, 252, 0.88);
+            --surface: rgba(255, 255, 255, 0.9);
+            --surface-strong: #ffffff;
+            --surface-subtle: rgba(241, 245, 249, 0.9);
+            --border: #dbe4ee;
+            --border-strong: #cbd5e1;
+            --text: #0f172a;
+            --muted: #475569;
+            --heading: #020617;
+            --link: #2563eb;
+            --link-hover: #1d4ed8;
+            --pill-bg: #e2e8f0;
+            --code-inline: #e2e8f0;
+            --code-block: #f1f5f9;
+            --shadow: rgba(15, 23, 42, 0.06);
+            --hero-start: #2563eb;
+            --hero-end: #059669;
+        }
+
+        html[data-theme='dark'] {
+            color-scheme: dark;
+            --bg: #0f172a;
+            --nav-bg: rgba(15, 23, 42, 0.88);
+            --surface: rgba(30, 41, 59, 0.55);
+            --surface-strong: #111827;
+            --surface-subtle: rgba(30, 41, 59, 0.32);
+            --border: #1e293b;
+            --border-strong: #334155;
+            --text: #cbd5e1;
+            --muted: #94a3b8;
+            --heading: #f8fafc;
+            --link: #60a5fa;
+            --link-hover: #93c5fd;
+            --pill-bg: #0f172a;
+            --code-inline: #0f172a;
+            --code-block: #020617;
+            --shadow: rgba(0, 0, 0, 0.24);
+            --hero-start: #60a5fa;
+            --hero-end: #34d399;
+        }
+
         body {
-            font-family: 'JetBrains+Mono', monospace;
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--bg);
+            color: var(--text);
+            transition: background-color 180ms ease, color 180ms ease;
+        }
+
+        .theme-body {
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .theme-nav,
+        .theme-footer,
+        .theme-surface,
+        .theme-surface-strong,
+        .theme-surface-subtle,
+        .theme-pill,
+        .theme-toggle,
+        .theme-prose pre,
+        .theme-prose code {
+            transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+        }
+
+        .theme-nav {
+            background: var(--nav-bg);
+            border-color: var(--border);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+        }
+
+        .theme-footer {
+            border-color: var(--border);
+            color: var(--muted);
+        }
+
+        .theme-brand {
+            color: var(--heading);
+        }
+
+        .theme-brand:hover {
+            color: var(--link);
+        }
+
+        .theme-nav-link {
+            color: var(--muted);
+        }
+
+        .theme-nav-link:hover {
+            color: var(--heading);
+        }
+
+        .theme-heading {
+            color: var(--heading);
+        }
+
+        .theme-text {
+            color: var(--text);
+        }
+
+        .theme-muted {
+            color: var(--muted);
+        }
+
+        .theme-link {
+            color: var(--link);
+        }
+
+        .theme-link:hover {
+            color: var(--link-hover);
+        }
+
+        .theme-surface {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            box-shadow: 0 14px 30px var(--shadow);
+        }
+
+        .theme-surface-strong {
+            background: var(--surface-strong);
+            border: 1px solid var(--border-strong);
+        }
+
+        .theme-surface-subtle {
+            background: var(--surface-subtle);
+            border: 1px solid var(--border);
+        }
+
+        .theme-pill {
+            background: var(--pill-bg);
+            border: 1px solid var(--border-strong);
+            color: var(--text);
+        }
+
+        .theme-border {
+            border-color: var(--border);
+        }
+
+        .theme-border-strong {
+            border-color: var(--border-strong);
+        }
+
+        .theme-gradient-text {
+            background-image: linear-gradient(90deg, var(--hero-start), var(--hero-end));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .theme-toggle {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.55rem 0.95rem;
+            border-radius: 9999px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--heading);
+            font-size: 0.875rem;
+            font-weight: 700;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--link);
+            color: var(--link);
+        }
+
+        .theme-toggle:focus-visible {
+            outline: 2px solid var(--link);
+            outline-offset: 2px;
+        }
+
+        .theme-toggle-dot {
+            width: 0.6rem;
+            height: 0.6rem;
+            border-radius: 9999px;
+            background: linear-gradient(90deg, var(--hero-start), var(--hero-end));
+        }
+
+        .theme-card {
+            transition: border-color 180ms ease, background-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+        }
+
+        .theme-card:hover {
+            border-color: var(--link);
+            transform: translateY(-1px);
+        }
+
+        .theme-empty {
+            color: var(--muted);
+            border-color: var(--border-strong);
+        }
+
+        .theme-prose {
+            color: var(--text);
+        }
+
+        .theme-prose h1,
+        .theme-prose h2,
+        .theme-prose h3 {
+            color: var(--heading);
+            font-weight: 700;
+            margin-top: 1.5em;
+            margin-bottom: 0.5em;
+        }
+
+        .theme-prose h2 {
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.3em;
+        }
+
+        .theme-prose p {
+            margin-bottom: 1.25em;
+            line-height: 1.7;
+        }
+
+        .theme-prose ul {
+            list-style-type: disc;
+            padding-left: 1.5em;
+            margin-bottom: 1.25em;
+        }
+
+        .theme-prose li {
+            margin-bottom: 0.5em;
+        }
+
+        .theme-prose code {
+            background: var(--code-inline);
+            color: var(--heading);
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        .theme-prose pre {
+            background: var(--code-block);
+            padding: 1em;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin-bottom: 1.25em;
+            border: 1px solid var(--border);
+        }
+
+        .theme-prose pre code {
+            background: transparent;
+            color: inherit;
+            padding: 0;
+            border-radius: 0;
+        }
+
+        .theme-prose pre code.hljs {
+            display: block;
+            background: transparent;
+        }
+
+        .theme-prose a {
+            color: var(--link);
+        }
+
+        .theme-prose a:hover {
+            color: var(--link-hover);
+        }
+
+        .theme-prose blockquote {
+            border-left: 4px solid var(--border-strong);
+            margin: 1.25em 0;
+            padding: 0.25rem 0 0.25rem 1rem;
+            color: var(--muted);
+        }
+
+        .theme-prose hr {
+            border-color: var(--border);
+        }
+
+        .theme-prose table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .theme-prose th,
+        .theme-prose td {
+            border: 1px solid var(--border);
+            padding: 0.625rem 0.75rem;
+        }
+
+        .theme-prose th {
+            background: var(--surface-subtle);
+            color: var(--heading);
         }
     </style>
 </head>
-<body class="bg-[#0f172a] text-slate-300 min-h-screen">
-    <nav class="border-b border-slate-800 p-6 sticky top-0 bg-[#0f172a]/80 backdrop-blur-md z-50">
-        <div class="max-w-4xl mx-auto flex justify-between items-center">
-            <a href="/" class="text-xl font-bold text-white hover:text-blue-400 transition-colors">Suyw</a>
-            <div class="space-x-6">
-                <a href="/#about" class="hover:text-white transition-colors">About</a>
-                <a href="/#projects" class="hover:text-white transition-colors">Projects</a>
-                <a href="/#logs" class="hover:text-white transition-colors">Notes</a>
+<body class="theme-body min-h-screen">
+    <nav class="theme-nav border-b p-6 sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto flex flex-wrap gap-4 justify-between items-center">
+            <a href="/" class="theme-brand text-xl font-bold transition-colors">Suyw</a>
+            <div class="flex items-center gap-4 sm:gap-6">
+                <a href="/#about" class="theme-nav-link transition-colors">About</a>
+                <a href="/#projects" class="theme-nav-link transition-colors">Projects</a>
+                <a href="/#logs" class="theme-nav-link transition-colors">Notes</a>
+                <button id="theme-toggle" type="button" class="theme-toggle" aria-pressed="false" aria-label="Toggle color theme">
+                    <span class="theme-toggle-dot" aria-hidden="true"></span>
+                    <span id="theme-toggle-label">Dark mode</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -32,18 +358,67 @@
         {{ content }}
     </main>
 
-    <footer class="border-t border-slate-800 p-8 mt-20 text-center text-slate-500 text-sm">
+    <footer class="theme-footer border-t p-8 mt-20 text-center text-sm">
         <p>&copy; 2026 Suyw-0123. Built with Jekyll & Tailwind CSS.</p>
         <div class="mt-4 space-x-4">
-            <a href="https://github.com/Suyw-0123" class="hover:text-white">GitHub</a>
+            <a href="https://github.com/Suyw-0123" class="theme-link">GitHub</a>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
     <script>
+        (function () {
+            var storageKey = window.__siteThemeStorageKey || 'site-theme';
+            var root = document.documentElement;
+            var toggle = document.getElementById('theme-toggle');
+            var label = document.getElementById('theme-toggle-label');
+            var hljsTheme = document.getElementById('hljs-theme');
+            var themeAssets = window.__siteThemeAssets || {
+                light: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github.min.css',
+                dark: 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark.min.css'
+            };
+
+            function applyTheme(nextTheme) {
+                var resolved = nextTheme === 'dark' ? 'dark' : 'light';
+
+                root.dataset.theme = resolved;
+                root.style.colorScheme = resolved;
+
+                if (hljsTheme) {
+                    hljsTheme.href = themeAssets[resolved];
+                }
+
+                if (toggle) {
+                    toggle.setAttribute('aria-pressed', resolved === 'dark' ? 'true' : 'false');
+                }
+
+                if (label) {
+                    label.textContent = resolved === 'dark' ? 'Light mode' : 'Dark mode';
+                }
+            }
+
+            applyTheme(root.dataset.theme === 'dark' ? 'dark' : 'light');
+
+            if (toggle) {
+                toggle.addEventListener('click', function () {
+                    var nextTheme = root.dataset.theme === 'dark' ? 'light' : 'dark';
+
+                    try {
+                        localStorage.setItem(storageKey, nextTheme);
+                    } catch (error) {
+                        // Persisting the preference is best-effort.
+                    }
+
+                    applyTheme(nextTheme);
+                });
+            }
+        })();
+
         document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('pre code').forEach(function (block) {
-                hljs.highlightElement(block);
+                if (window.hljs) {
+                    hljs.highlightElement(block);
+                }
             });
         });
     </script>

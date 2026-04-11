@@ -239,7 +239,7 @@
             border-color: var(--border-strong);
         }
 
-        .theme-prose {
+        .theme-prose.prose {
             color: var(--text);
             --tw-prose-body: var(--text);
             --tw-prose-headings: var(--heading);
@@ -303,6 +303,14 @@
 
         .theme-prose li {
             margin-bottom: 0.5em;
+        }
+
+        .theme-prose.prose :is(p, li, td, th, figcaption, dd, dt, pre) {
+            color: var(--text);
+        }
+
+        .theme-prose.prose blockquote :is(p, li) {
+            color: var(--muted);
         }
 
         .theme-prose code {

@@ -20,11 +20,10 @@ I chose **Ubuntu LTS** as my distro for its familiarity and its alignment with m
 *   **Theme:** **One Dark Pro** with the **Night Flat** variant. It’s a low-contrast, eyes-friendly choice that works well for me.
 *   **Approach:** I keep my configuration lean, installing only the extensions I use daily.
 
-### Workflow: OpenCode & OpenSpec 
-The core of my setup is a rigorous, specification-driven workflow using **OpenCode** and **OpenSpec**. While it adds more steps than a typical coding process, it significantly increases my confidence in the final result.
-1.  **Reasoning:** I use OpenSpec to analyze the problem and document the "why" before writing code.
-2.  **Solution Approval:** Changes are based on a documented solution report, which ensures a clear plan.
-3.  **Traceability:** Every modification is logged, tested, and verified. Having a complete walkthrough in a Pull Request makes the review process transparent and reliable.
+### Workflow: OpenCode & OpenAgent
+
+
+
 
 
 ---
